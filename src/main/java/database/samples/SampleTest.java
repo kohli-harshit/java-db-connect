@@ -46,6 +46,12 @@ public final class SampleTest {
         if(mapDifference.entriesDiffering().size()!=0){
           mismatches.add("Row " + counter + " Difference = " + mapDifference.entriesDiffering().toString());
         }
+        if(mapDifference.entriesOnlyOnLeft().size()!=0){
+          mismatches.add("Row " + counter + " : Found in source but not in destination  = " + mapDifference.entriesOnlyOnLeft().toString());
+        }
+        if(mapDifference.entriesOnlyOnRight().size()!=0){
+          mismatches.add("Row " + counter + " : Found in destination but not in source  = " + mapDifference.entriesOnlyOnRight().toString());
+        }
       }
     }
     if(mismatches.size()==0){
